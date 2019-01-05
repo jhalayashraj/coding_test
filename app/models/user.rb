@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   ## Associations ##
   has_many :authentication_tokens, dependent: :destroy, inverse_of: :user
+  has_many :lists, dependent: :destroy
 
   ## Validations ##
   validates :username, uniqueness: { case_sensitive: false }
